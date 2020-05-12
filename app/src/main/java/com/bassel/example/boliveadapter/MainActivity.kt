@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.bassel.example.boliveadapter.api.DataApiService
+import com.bassel.example.boliveadapter.api.responses.EmployeeData
 import com.bassel.libs.boliveadapter.BoGenericResponse
 import com.bassel.libs.boliveadapter.BoLiveDataAdapterFactory
 import com.google.gson.GsonBuilder
@@ -18,6 +19,7 @@ import okhttp3.JavaNetCookieJar
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import com.bassel.example.boliveadapter.api.responses.Error
 import java.net.CookieManager
 import java.net.CookiePolicy
 import java.util.concurrent.TimeUnit
@@ -72,12 +74,16 @@ class MainActivity : AppCompatActivity() {
 
                     when(response){
                         is BoGenericResponse.ApiSuccessResponse ->{
-                            Log.i(TAG, "Returned Data -ApiSuccessResponse-:  $response")
+                            val responseBody : EmployeeData = response.body
+                            Log.i(TAG, " Returned Data -ApiErrorResponse-: $responseBody")
                             tv_info.text = Constants.TOOLS.FormatStringToJson(response.body.toString())
                             Toast.makeText(this@MainActivity,"New Success Response Has Been Detected!",Toast.LENGTH_LONG).show()
                         }
                         is BoGenericResponse.ApiErrorResponse ->{
-                            Log.i(TAG, " Returned Data -ApiErrorResponse-: $response")
+                            val errorBody : Error = response.errorBody
+                            val errorCode : Int = response.errorCode
+                            Log.i(TAG, " Returned Data -ApiErrorResponse-: $errorBody")
+                            Log.i(TAG, " Returned Data -ApiErrorResponse-: $errorCode")
                             tv_info.text = Constants.TOOLS.FormatStringToJson(response.errorBody.toString())
                             Toast.makeText(this@MainActivity,"New ${response.errorCode} Error Serialized Response Has Been Detected!",Toast.LENGTH_LONG).show()
                         }
@@ -86,7 +92,8 @@ class MainActivity : AppCompatActivity() {
                             Toast.makeText(this@MainActivity,"New Empty Response Has Been Detected!",Toast.LENGTH_LONG).show()
                         }
                         is BoGenericResponse.ApiUnhandledErrorResponse ->{
-                            Log.i(TAG, " Returned Data -ApiUnhandledErrorResponse-: $response")
+                            val errorMessage : String = response.errorMessage
+                            Log.i(TAG, " Returned Data -ApiUnhandledErrorResponse-: $errorMessage")
                             Toast.makeText(this@MainActivity,"New Unhandled Error Response Has Been Detected!",Toast.LENGTH_LONG).show()
                         }
                     }

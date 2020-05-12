@@ -2,6 +2,8 @@
 
 [![](https://jitpack.io/v/Bassel-Summak/boliveadapter.svg)](https://jitpack.io/#Bassel-Summak/boliveadapter)
 
+<br />
+
 Retrofit library provides an ideal solution for Android to compose HTTP connections easily through a simple expressive interface. However, the library has a limitation. It only serializes non-error HTTP responses. Any error data returned from the server won't be serialized and will be stored in a string variable. Thus, you won't be able to make a decision or take any complicated actions based on the server response.
 
 <br />
@@ -58,7 +60,7 @@ https://jitpack.io/#Bassel-Summak/boliveadapter
 
 <br />
 
-- Add the adapter factory to retrofit
+- Add the adapter factory to retrofit.
 
 ```kotlin
   val retrofitBuilder =   Retrofit.Builder()
@@ -68,7 +70,7 @@ https://jitpack.io/#Bassel-Summak/boliveadapter
             .build()
 ```
 
-- Replace your functions in interface
+- Replace your functions in the interface.
 
 ```kotlin
 // OLD
@@ -91,7 +93,7 @@ Where **EmployeeData** represents the class you want to serialize success respon
 
 <br />
 
-- Then you can observe server response like this
+- Then you can observe server response like this.
 
 ```kotlin
 client.getEmployeeData(url).observe(this@MainActivity, Observer { response->
@@ -144,7 +146,7 @@ client.getEmployeeData(url).observe(this@MainActivity, Observer { response->
             .build()
 ```
 
-This means the library will only handle errors with **400** & **417** codes. Others responses will be thrown to **ApiUnhandledErrorResponse**
+This means the library will only handle errors with **400** & **417** codes. Others responses will be thrown to **ApiUnhandledErrorResponse**.
 
 <br />
 

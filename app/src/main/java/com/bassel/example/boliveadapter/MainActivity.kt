@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
         val retrofitBuilder =   Retrofit.Builder()
             .baseUrl(Constants.URLS.BASE_URL)
-            .addCallAdapterFactory(BoLiveDataAdapterFactory(listOf(400,200)))
+            .addCallAdapterFactory(BoLiveDataAdapterFactory(listOf(400,417))) // error codes to handle
             .client(getHttp())
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().excludeFieldsWithoutExposeAnnotation().create()))
             .build()

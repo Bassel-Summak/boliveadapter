@@ -64,6 +64,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun callAPI(url: String){
 
+
         GlobalScope.launch {
             withContext(Dispatchers.Main){
 
@@ -96,9 +97,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     private fun getHttp() : OkHttpClient{
-
 
         val cookieManager = CookieManager()
         cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL)
@@ -108,7 +107,6 @@ class MainActivity : AppCompatActivity() {
             .connectTimeout(20, TimeUnit.SECONDS)
             .readTimeout(20, TimeUnit.SECONDS)
             .cookieJar(JavaNetCookieJar(cookieManager))
-
             .build()
     }
 }

@@ -27,17 +27,17 @@ sealed class BoGenericResponse<T,E> {
 
 
 
-    companion object {
+    internal companion object {
 
 
-        fun <T,E> create(error: Throwable): ApiUnhandledErrorResponse<T,E> {
+        internal fun <T,E> create(error: Throwable): ApiUnhandledErrorResponse<T,E> {
 
             return ApiUnhandledErrorResponse(
                     error.message ?: "unknown error"
             )
         }
 
-        fun <T,E> create(response: Response<T>,errorType: Type, listSupportedErrorCodes: List<Int>): BoGenericResponse<T,E> {
+        internal fun <T,E> create(response: Response<T>,errorType: Type, listSupportedErrorCodes: List<Int>): BoGenericResponse<T,E> {
 
 
             if(response.isSuccessful){

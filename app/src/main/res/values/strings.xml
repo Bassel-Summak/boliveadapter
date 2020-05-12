@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BoLive Adapter</string>
+    <string name="btn_create_error">Create Error</string>
+    <string name="btn_fetch_data">Fetch Data</string>
+</resources>

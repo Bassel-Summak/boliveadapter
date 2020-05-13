@@ -163,3 +163,21 @@ All errors will be sent to **ApiUnhandledErrorResponse** for **getEmployeeData**
 <br />
 
 **For more details, you can check the demo app in this repository.**
+
+<br />
+
+# Developed By
+
+* Bassel Summak - <bassel.su@gmail.com>
+
+* You can also reach me on   [![alt text][2.1]][2]  [![alt text][3.1]][3] 
+
+
+
+[2.1]: http://i.imgur.com/P3YfQoD.png
+[2]: https://www.facebook.com/Bassel.Su
+
+[3.1]: http://i.imgur.com/tXSoThF.png
+[3]: https://twitter.com/Bassel_Summak
+
+

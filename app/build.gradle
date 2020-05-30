@@ -47,4 +47,10 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
     implementation project(path: ':boliveadapter')
 
+    // Navigation Controller
+
+    def nav_version = "2.3.0-alpha02"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
 }

@@ -44,7 +44,7 @@ data class EmployeeData(
         val profileImage: String = ""
     ) {
         override fun toString(): String {
-            return "employeeAge:$employeeAge," +
+            return "{employeeAge:$employeeAge," +
                     "employeeName:$employeeName," +
                     "employeeSalary:$employeeSalary," +
                     "id:$id," +

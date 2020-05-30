@@ -9,6 +9,8 @@ class Constants {
             const val BASE_URL = "http://dummy.restapiexample.com/api/v1/"
             const val ERROR_URL = "employee/0"
             const val DATA_URL = "employee/1"
+            const val NETWORK_TIMEOUT = 10000L
+
         }
     }
 
